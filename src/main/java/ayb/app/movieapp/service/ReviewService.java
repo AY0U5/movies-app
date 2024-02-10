@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class ReviewService {
     @Autowired
     private ReviewDao reviewDao;
-
+    @Autowired
     private MongoTemplate template;
     public Review createReview(String reviewBody, String imdbId){
         Review review = reviewDao.insert(new Review(reviewBody));
