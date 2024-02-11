@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/api/movie/")
+@RequestMapping("/api/v1/movies")
 public class MovieWS {
     @Autowired
     private MovieService movieService;
@@ -24,7 +24,7 @@ public class MovieWS {
         Movie movie = movieService.findByImdbId(imdbId);
         return convertor.toDto(movie);
     }
-    @GetMapping("/")
+    @GetMapping("")
     public List<MovieDto> findAll() {
         List<Movie> movies = movieService.findAll();
         return convertor.toDtos(movies);
